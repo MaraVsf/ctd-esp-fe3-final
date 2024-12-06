@@ -1,44 +1,65 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
+
+.favButton {
+  background-color: rgba(136, 136, 136, 0.258);
   padding: 10px;
   border: none;
   width: 100%;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
-nav{
+nav {
   display: flex;
-  width: 80vw;
   justify-content: flex-start;
   padding: 1rem;
 }
 
-a{
+a {
   color: #000;
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
-a:hover{
+a:hover {
   color: rgb(136, 136, 136);
-} 
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav button {
+  padding: 0.5rem 1rem;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+nav button:hover {
+  background-color: #0056b3;
+}
 
 footer {
   display: flex;
@@ -52,16 +73,16 @@ footer {
   margin-top: 2rem;
 }
 
-footer > img{
+footer > img {
   width: 200px;
   margin: 0;
 }
-footer > p{
+footer > p {
   margin: 0;
   padding-top: 0.7rem;
 }
 
-form{
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -70,53 +91,237 @@ form{
   margin: 0 auto;
 }
 
-.card{
+.card {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  width: 220px;
+  padding: 1rem;
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background-color: #fff;
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+.card:hover {
+  border: 1px solid rgb(80, 80, 80);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
-.card-grid{
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.card h3,
+.card h4 {
+  margin: 0;
+  text-align: center;
+  color: #333;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.card h4 {
+  font-size: 1rem;
+  color: #666;
+}
+
+.favButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: #ff9f00;
+  margin-top: 10px;
+}
+
+.favButton:hover {
+  transform: scale(1.2);
+}
+
+.card-grid {
   display: flex;
   justify-content: space-evenly;
-  gap: 1rem;
+  gap: 1.5rem;
   width: 90vw;
-  height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.dark{
+.dark {
   background-color: #12121296;
   color: white;
 }
+
 .dark > a {
   color: white;
+  text-decoration: none;
+}
+
+.dark .favButton {
+  color: #ffcc00;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 10px;
+  width: 350px;
+  margin: 2rem auto;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.detail-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.detail-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.detail-container img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.detail-container h4 {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.detail-container a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.detail-container a:hover {
+  text-decoration: underline;
+  color: #005fa3;
+}
+
+.contact-container {
+  margin: 2rem auto;
+  margin-bottom: auto;
+  padding: 2rem;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.contact-form-container {
+  height: 300px;
+}
+
+.contact-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form-container label {
+  font-size: 1rem;
+}
+
+.contact-form-container input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form-container input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.contact-form-container button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.contact-form-container h4,
+.contact-form-card-container h3 {
+  font-size: 1rem;
+}
+
+.dark .contact-container {
+  background-color: #333;
+  color: white;
+}
+
+.dark .contact-container h2 {
+  color: #fff;
+}
+
+.dark .contact-container p {
+  color: #ddd;
+}
+
+.dark .contact-form-container input {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+.dark .contact-form-container input:focus {
+  border-color: #007bff;
+}
+
+.dark .contact-form-container button {
+  background-color: #0056b3;
+}
+
+.dark .contact-form-container button:hover {
+  background-color: #003d7a;
 }
